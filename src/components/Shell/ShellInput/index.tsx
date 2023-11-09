@@ -3,6 +3,7 @@ import { getHotkeyHandler, useFocusTrap } from '@mantine/hooks';
 import { useState } from 'react';
 
 import { commands as ShellCommands } from '@/data/constants';
+
 import classes from './ShellInput.module.css';
 
 const commands = ShellCommands.map(({ command }) => command);

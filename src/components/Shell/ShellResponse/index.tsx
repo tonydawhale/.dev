@@ -2,15 +2,10 @@ import { Tooltip } from '@mantine/core';
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import React from 'react';
 
-import {
-    commands,
-    experience,
-    icons,
-    links,
-    projects,
-} from '@/data/constants';
 import Ascii from '@/components/Ascii';
 import InitText from '@/components/InitText';
+import { commands, experience, icons, links, projects } from '@/data/constants';
+
 import classes from './ShellResponse.module.css';
 
 export default function ShellResponse({
