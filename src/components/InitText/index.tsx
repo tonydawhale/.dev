@@ -1,11 +1,9 @@
 import { Text } from '@mantine/core';
 import React from 'react';
 
-import useStyles from './InitText.styles';
+import classes from './InitText.module.css';
 
 export default function InitText() {
-    const { classes } = useStyles();
-
     return (
         <Text>
             Welcome to my Portfolio! Execute the command{' '}

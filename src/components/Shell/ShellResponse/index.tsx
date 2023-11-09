@@ -8,10 +8,10 @@ import {
     icons,
     links,
     projects,
-} from '../../../data/constants';
-import Ascii from '../../Ascii';
-import InitText from '../../InitText';
-import useStyles from './ShellResponse.styles';
+} from '@/data/constants';
+import Ascii from '@/components/Ascii';
+import InitText from '@/components/InitText';
+import classes from './ShellResponse.module.css';
 
 export default function ShellResponse({
     command,
@@ -20,8 +20,6 @@ export default function ShellResponse({
     command: string;
     setComponents: Dispatch<SetStateAction<ReactNode[]>>;
 }) {
-    const { classes } = useStyles();
-
     const res = (command: string) => {
         switch (command) {
             case 'init':

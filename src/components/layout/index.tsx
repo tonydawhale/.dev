@@ -1,23 +1,21 @@
 import { MantineProvider } from '@mantine/core';
 import React from 'react';
 
-import Shell from '../Shell';
+import Shell from '@/components/Shell';
 
 interface AppShellProps {
     children: React.ReactNode;
 }
 
-export default function Layout({ children }: AppShellProps) {
+export default function Layout({}: AppShellProps) {
     return (
         <MantineProvider
-            withGlobalStyles
-            withNormalizeCSS
+            defaultColorScheme="dark"
             theme={{
-                colorScheme: 'dark',
                 fontFamily: 'Inconsolata, monospace',
             }}
         >
-            <Shell/>
+            <Shell />
         </MantineProvider>
     );
 }

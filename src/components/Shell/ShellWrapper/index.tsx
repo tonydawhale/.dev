@@ -5,14 +5,13 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import useStyles from './ShellWrapper.styles';
+import classes from './ShellWrapper.module.css';
 
 interface AppShellProps {
     children: React.ReactNode;
 }
 
 export default function ShellWrapper({ children }: AppShellProps) {
-    const { classes, cx } = useStyles();
     const { height, width } = useViewportSize();
     const { hovered, ref } = useHover();
     const { toggle } = useFullscreen();
@@ -25,10 +24,8 @@ export default function ShellWrapper({ children }: AppShellProps) {
                     <div className={classes.windowActionsWrapper} ref={ref}>
                         <Link href={'/'} passHref>
                             <UnstyledButton
-                                className={cx(
-                                    classes.windowAction,
-                                    classes.close,
-                                )}
+                                className={classes.windowAction}
+                                data-action={'close'}
                             >
                                 {hovered && (
                                     <IconX
@@ -40,10 +37,8 @@ export default function ShellWrapper({ children }: AppShellProps) {
                             </UnstyledButton>
                         </Link>
                         <div
-                            className={cx(
-                                classes.windowAction,
-                                classes.minimize,
-                            )}
+                            className={classes.windowAction}
+                            data-action={'minimize'}
                         >
                             {hovered && (
                                 <IconMinus
@@ -54,10 +49,8 @@ export default function ShellWrapper({ children }: AppShellProps) {
                             )}
                         </div>
                         <UnstyledButton
-                            className={cx(
-                                classes.windowAction,
-                                classes.maximize,
-                            )}
+                            className={classes.windowAction}
+                            data-action={'maximize'}
                             onClick={toggle}
                         >
                             {hovered && (
@@ -77,7 +70,7 @@ export default function ShellWrapper({ children }: AppShellProps) {
                     <div></div>
                 </div>
                 <div className={classes.content}>
-                    <ScrollArea.Autosize maxHeight={`77vh`}>
+                    <ScrollArea.Autosize mah={`77vh`}>
                         {children}
                     </ScrollArea.Autosize>
                 </div>

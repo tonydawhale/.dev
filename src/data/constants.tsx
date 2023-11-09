@@ -76,7 +76,7 @@ export const projects = [
             'Storage optimized so entire database sites at ~50mb',
             'Technologies Used: Docker, MongoDB, Go, SvelteKit, Chart.js, TypeScript, Bun',
         ],
-    }
+    },
 ];
 export const commands = [
     {

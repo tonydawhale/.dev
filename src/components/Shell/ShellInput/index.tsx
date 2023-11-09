@@ -2,8 +2,8 @@ import { TextInput } from '@mantine/core';
 import { getHotkeyHandler, useFocusTrap } from '@mantine/hooks';
 import { useState } from 'react';
 
-import { commands as ShellCommands } from '../../../data/constants';
-import useStyles from './ShellInput.styles';
+import { commands as ShellCommands } from '@/data/constants';
+import classes from './ShellInput.module.css';
 
 const commands = ShellCommands.map(({ command }) => command);
 
@@ -18,7 +18,6 @@ export default function ShellInput({
     val?: string;
     scrollRef?: React.RefObject<HTMLElement>;
 }) {
-    const { classes, cx } = useStyles();
     const focusTrapRef = useFocusTrap(true);
     const [usedCommands, setUsedCommands] = useState<string[]>([]);
     const [value, setValue] = useState<string>(val);
@@ -35,13 +34,15 @@ export default function ShellInput({
             <TextInput
                 data-autofocus
                 unstyled
+                data-valid={
+                    commands.includes(value)
+                        ? 'true'
+                        : value != '' && !commands.includes(value)
+                        ? 'false'
+                        : undefined
+                }
                 classNames={{
-                    input: cx(classes.inputWrapperInput, {
-                        [classes.inputWrapperValidCommand]:
-                            commands.includes(value),
-                        [classes.inputWrapperInvalidCommand]:
-                            value != '' && !commands.includes(value),
-                    }),
+                    input: classes.inputWrapperInput,
                     root: classes.inputWrapperRoot,
                 }}
                 ref={!readOnly ? focusTrapRef : null}

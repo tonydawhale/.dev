@@ -1,9 +1,8 @@
 import React from 'react';
 
-import useStyles from './Ascii.styles';
+import classes from './Ascii.module.css';
 
 export default function Ascii() {
-    const { classes } = useStyles();
     return (
         <div className={classes.ascii} key={0}>
             {`

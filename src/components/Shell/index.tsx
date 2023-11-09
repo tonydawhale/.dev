@@ -4,12 +4,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import Ascii from '../Ascii';
 import InitText from '../InitText';
 import ShellWrapper from '../Shell/ShellWrapper';
-import useStyles from './Shell.styles';
+import classes from './Shell.module.css';
 import ShellInput from './ShellInput';
 import ShellResponse from './ShellResponse';
 
 export default function Shell() {
-    const { classes } = useStyles();
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const [components, setComponents] = useState<ReactNode[]>([
