@@ -141,10 +141,6 @@ export const links = [
         link: 'https://github.com/tonydawhale',
     },
     {
-        label: 'LinkedIn',
-        link: 'https://www.linkedin.com/in/tony-whalen/',
-    },
-    {
         label: 'Email',
         link: 'mailto:tonydawhale@gmail.com',
     },
