@@ -80,6 +80,19 @@ export const PROJECTS = [
     ],
   },
   {
+    name: 'SurfBuddy',
+    link: '/SurfBuddyUML.png',
+    date: 'December 2024',
+    description: [
+      'A Java application that poses as an alternative to Surfline, a popular surf forecasting website.',
+      'SurfBuddy uses the NOAA API to fetch surf & weather data and displays it in a human-readable format.',
+      'Users are able to list all surf spots, look at the surf data for a specific surf spot, and get a recommendation on the best surf spot to go to based on the surf data all from an easy to use command-line interface.',
+      'On startup, the SurfBuddy class initializes a series of SurfSpot classes that each contain surf data for a specific surf spot. The SurfBuddy class then fetches the surf data from the NOAA API and stores it in the SurfSpot classes.',
+      'Personally, as my contribution to the group project, I designed the HTTP request and response handling, parsing of the data, and the formatting of the data to be displayed to the user.',
+      'Technologies Used: Java',
+    ],
+  },
+  {
     name: 'Kuudra API',
     link: 'https://github.com/tonydawhale/kuudra-api',
     date: 'Janurary 2024 --> Present',
